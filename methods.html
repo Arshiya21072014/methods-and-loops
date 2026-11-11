@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Day Picker</title>
+</head>
+<body>
+<h2>Random Day Picker</h2>
+<p id="numbers"></p>
+<button onclick="pickDay()">Pick a Random Number</button>
+<h3 id="result"></h3>
+<script>
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"];
+function showNumbers() {
+    let text = "";
+    for (let i = 1; i <= 7; i++) {
+        text += i + " ";
+    }
+    document.getElementById("numbers").innerHTML = text;
+}
+function pickDay() {
+    let num = Math.floor(Math.random() * 7);
+    document.getElementById("result").innerHTML =
+        "Number: " + (num + 1) + " - " + days[num];
+}
+showNumbers();
+</script>
+</body>
+</html>
